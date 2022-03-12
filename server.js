@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const router = require("./routes");
 const public = __dirname + "/public/";
+const port = process.env.PORT || 5000;
 
 app.use(express.json());
 
@@ -20,5 +21,5 @@ app.use((req, res, next) => {
   });
 });
 
-// * viewed at http://localhost:3000
-app.listen(3000, () => console.log("Server http://localhost:3000"));
+// * viewed on port 5000
+app.listen(port, () => console.log(`Listening on port ${port}`));
